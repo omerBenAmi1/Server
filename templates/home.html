@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} home {% endblock %}
+{% block tohen %}
+    <div id="homePageBody">
+        <div>
+            <h1 id="header2">we ski</h1>
+        </div>
+        {% if session.logedin %}
+            <h3 id="home_user"> {{ session.user }} </h3><br>
+        {% endif %}
+        <p id="paragraph">
+            אתרי הסקי שלנו מציעים שפע של: <br>
+            מסעדות טובות,
+            אפרה סקי משובח,
+            ספא
+            והרים של אטרקציות!<br>
+            וברובם דאגנו לכם להטבות :)
+        </p>
+        <p id="animationP"></p>
+        <footer id="footer1">
+            <p class="pFooter">
+                עקבו אחרינו ברשתות החברתיות
+            </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        </footer>
+    </div>
+{% endblock %}

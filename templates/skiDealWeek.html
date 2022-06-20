@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} ski Deal Week {% endblock %}
+{% block tohen %}
+    <div id="skiDealWeek">
+        <div class="cloud">
+            <div class="light"></div>
+            <img src="../static/plain.png"/>
+        </div>
+        <div id="paragraph2">
+            <p>
+                {% if session.logedin %}
+                    ** {{ session.user }} ** <br>
+                {% endif %}
+                לא מחכים! <br>
+                משריינים!
+            </p>
+        </div>
+        <span id="header4">
+        <h1>עונת 2023 עוד רגע כאן</h1>
+    </span>
+        <span id="soon">
+        <h1>פרטים והרשמה מ-20.7...</h1>
+    </span>
+        <footer id="footer3">
+            <p class="pFooter">
+                עקבו אחרינו ברשתות החברתיות
+            </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        </footer>
+    </div>
+{% endblock %}

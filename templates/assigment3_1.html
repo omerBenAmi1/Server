@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} assigment3_1 {% endblock %}
+{% block tohen %}
+    <div id="assigment3_1Body">
+        {{ super() }}
+        {% if session.logedin %}
+            רצינו שתדעי {{ session.user }}<br>
+        {% endif %}
+        <h1 id="header6"> הופעות ה- Week </h1>
+        {{ dates | default('') | join(' | ') }}
+        {% if art %}
+            <div id="container">
+                <h2 id="HeaderArt">האומנים שיחממו לנו את הלב</h2>
+                <ul id="art">
+                    {% for music in art %}
+                        <li>
+                            <h3>{{ music | upper }} </h3>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <footer id="footer1">
+                <p class="pFooter">
+                    עקבו אחרינו ברשתות החברתיות
+                </p>
+                <img class="icon2" src="../static/instagram.png">
+                <img class="icon2" src="../static/twitter.png">
+                <img class="icon2" src="../static/whatsapp (1).png">
+            </footer>
+            </div>
+        {% else %}
+            <h3>No info yet. soon..</h3>
+        {% endif %}
+{% endblock %}

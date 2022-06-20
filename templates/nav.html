@@ -1,0 +1,17 @@
+<span class="headerLeft">
+        <header class="header">skiWorld</header>
+        <img class="icon" src="../static/cable-car-cabin (1).jpeg">
+    </span>
+<nav class="nav">
+    <ul class="nav-list">
+        <li class="list-item"><a href="/home">דף הבית</a></li>
+        <li class="list-item"><a href="/ContactUs">צור קשר</a></li>
+        <li class="list-item"><a href="/skiDealWeek">WEEK</a></li>
+        <li class="list-item"><a href="/assigment3_1">הופעות</a></li>
+        {% if not session.logedin %}
+            <li class="list-item"><a href="/assigment3_2">כניסה</a></li>
+        {% else %}
+            <li class="list-item"><a href="/logout">יציאה</a></li>
+        {% endif %}
+    </ul>
+</nav>

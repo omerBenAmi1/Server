@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% include('styles.html') %}
+    {% include('js.html') %}
+</head>
+<body>
+{% include 'nav.html' %}
+{% block tohen %}
+    <img class="putGlass" src="../static/glass.jpeg">
+{% endblock %}
+</body>
+</html>

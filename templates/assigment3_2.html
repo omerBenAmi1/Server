@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %} assigment3_2 {% endblock %}
+{% block tohen %}
+    <div id="assigment3_2Body">
+        <form id="form_rent" action="/assigment3_2" method="get">
+            <div>
+                <label id="search" for="search">חפש אזור לרכישת ציוד:</label> <br>
+                <input type="submit" value="חפש">
+                <input type="text" id="place_name" name="place_name" placeholder="הקלד כאן אזור..">
+            </div>
+        </form>
+
+
+        {% if message %}
+            <h4>{{ message }}</h4>
+        {% endif %}
+
+        {% if all_list %}
+            <ul>
+                {% for dicts in all_list %}
+                    <h4>אזור: {{ dicts['place'] }} , שם החנות: {{ dicts['name_store'] }}</h4>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if place_name %}
+            <div>
+                <h4>אזור: {{ place_name }}</h4>
+                <h4>שם החנות: {{ name_store }}</h4>
+            </div>
+        {% endif %}
+
+        {% if session.logedin %}
+            <h1 id="hiName"> היי {{ session.user }} {{ messageSign }} </h1>
+        {% else %}
+            <div id="form_registration">
+                <form id="registration_form" action="/assigment3_2" method="post">
+                    <h4 id="registration" for="registration">הרשמה</h4> <br>
+                    <label for="">שם משתמש:</label> <br>
+                    <input type="text" id="user" name="user" required> <br>
+                    <label for="">אימייל:</label> <br>
+                    <input type="email" id="email_res" name="email_res" required> <br> <br>
+                    <button id="submit2" type="submit2">שלח</button>
+                </form>
+            </div>
+        {% endif %}
+
+        {% if messageAgain %}
+            <h4>{{ messageAgain }}</h4>
+        {% endif %}
+
+        {% if messageCannot %}
+            <h4>{{ messageCannot }}</h4>
+        {% endif %}
+
+        <footer id="footer1">
+            <p class="pFooter">
+                עקבו אחרינו ברשתות החברתיות
+            </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        </footer>
+    </div>
+
+{% endblock %}
+
