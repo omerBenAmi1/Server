@@ -4,7 +4,7 @@
     <div id="assigment3_1Body">
         {{ super() }}
         {% if session.logedin %}
-            רצינו שתדעי {{ session.user }}<br>
+            חשוב לזכור {{ session.user }}<br>
         {% endif %}
         <h1 id="header6"> הופעות ה- Week </h1>
         {{ dates | default('') | join(' | ') }}

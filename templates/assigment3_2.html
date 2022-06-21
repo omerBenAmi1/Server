@@ -52,6 +52,16 @@
         {% if messageCannot %}
             <h4>{{ messageCannot }}</h4>
         {% endif %}
+        <div id="dic_user">
+            <h1>מילון משתמשים</h1>
+            <div>
+                {% for u, data in user_dic: %}
+                    <h4 class="user_name_email"> שם משתמש: {{ data.name }}</h4>
+                    <h4 class="user_name_email">  אימייל: {{ data.email }} </h4><br>
+                {% endfor %}
+            </div>
+        </div>
+
 
         <footer id="footer1">
             <p class="pFooter">

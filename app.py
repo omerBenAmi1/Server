@@ -77,11 +77,11 @@ def assigment2():
                     session['logedin'] = True
                     print(user_dict)
                     return render_template('assigment3_2.html',
-                                        messageAgain='שמחים לראות אותך שוב')
+                                        messageAgain='שמחים לראות אותך שוב', user_dic=user_dict.items())
 
                 else:
                     return render_template('assigment3_2.html',
-                                            messageCannot='האימייל קיים עם שם משתמש אחר, הכנס שם משתמש נכון, או בחר איימל אחר')
+                                            messageCannot='האימייל קיים עם שם משתמש אחר, הכנס שם משתמש נכון, או בחר איימל אחר', user_dic=user_dict.items())
 
         user_dict.update({
             new_user: {
@@ -92,7 +92,7 @@ def assigment2():
         session['logedin'] = True
         print(user_dict)
 
-    return render_template('assigment3_2.html', messageSign='ההרשמה בוצעה בהצלחה')
+    return render_template('assigment3_2.html', messageSign='ההרשמה בוצעה בהצלחה', user_dic=user_dict.items())
 
 
 @app.route('/ContactUs')
