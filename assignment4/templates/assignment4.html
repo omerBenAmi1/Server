@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block title %} assigment4 {% endblock %}
+{% block tohen %}
+    <div id="assigment3_2Body">
+
+        <h2>Insert Form</h2>
+        <form action="/assignment4/insert_user" method="post">
+            <input type="text" id="insert_name" name="insert_name" placeholder="Insert Name" required>
+            <input type="email" id="insert_email" name="insert_email" placeholder="Email" required>
+            <button id="submit" type="submit">insert</button><br><br>
+        </form>
+
+        <h2>update Form</h2>
+        <form action="/assignment4/update_user" method="post">
+            <input type="email" id="insert_email" name="insert_email" placeholder="Insert email for chang" required>
+            <input type="text" id="update_name" name="update_name" placeholder="New Name" required>
+            <button id="submit" type="submit">update</button><br><br>
+        </form>
+
+        <h2>Delete Form</h2>
+        <form action="/assignment4/delete_user" method="post">
+            <input type="email" id="delete_email" name="delete_email" placeholder="Email" required>
+            <button id="submit" type="submit">delete</button><br><br>
+        </form>
+
+        {% if error %}
+            <h4 id="E"> {{ error }}</h4>
+        {% endif %}
+        {% for user in users %}
+            <div class="container">
+                <h4>Name: {{ user.name }}</h4>
+                <h4>Email: {{ user.email }}</h4>
+            </div>
+        {% endfor %}
+        <footer id="footer1">
+            <p class="pFooter">
+                עקבו אחרינו ברשתות החברתיות
+            </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        </footer>
+    </div>
+    <link rel="stylesheet" href={{ url_for('assignment4.static', filename='CSS/users.css') }}>
+{% endblock %}
+
+
+
+
+
+
+
+

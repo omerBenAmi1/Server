@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} assigment4 {% endblock %}
+{% block tohen %}
+    <div id="assigment3_2Body">
+
+        <h2>Frontend Form</h2>
+            <div id="user-container"></div>
+            <form id="form1" action="#" method="get">
+                <input type="number" id="form1_id" name="id" placeholder="id" required>
+                <button id="submit" type="submit">Fetch</button>
+            </form>
+
+            <h2>Backend Form</h2>
+            <form action="/assignment4/source" method="get">
+                <input type="number" id="id" name="id" placeholder="id" required>
+                <button id="submit" type="submit">Fetch</button><br><br>
+            </form>
+        <img src="{{ url }}">
+        <h3>{{ name }}</h3>
+        <footer id="footer1">
+            <p class="pFooter">
+                עקבו אחרינו ברשתות החברתיות
+            </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        </footer>
+    </div>
+    <link rel="stylesheet" href={{  url_for('assignment4.static', filename='CSS/users.css') }}>
+<script>
+const form = document.getElementById("form1")
+
+form.onsubmit = function (e) {
+    const id = document.getElementById("form1_id").value;
+    const url = `https://reqres.in/api/users/${id}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(value => {
+            document.getElementById("user-container").innerHTML = `
+            <h3>${value.data["first_name"]}</h3>
+            <img src="${value.data["avatar"]}" alt="avatar"/>
+            `
+        })
+
+    e.preventDefault();
+}
+
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+

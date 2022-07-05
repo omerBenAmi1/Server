@@ -1,0 +1,17 @@
+.container {
+    border: darkgrey 3px solid;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 400px;
+    padding: 20px;
+    text-align: left;
+    background-color: #A5D6D9;
+}
+
+#E{
+    display: inline;
+    color: white;
+    font-size: 20px;
+    background-color: #3B666B;
+}
+

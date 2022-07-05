@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, session
 from flask import redirect
 from datetime import timedelta
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -114,6 +115,12 @@ def logout_func():
     return redirect('/assigment3_2')
 
 
+## Blueprint
+from assignment4.assignment4 import assignment4
+app.register_blueprint(assignment4)
+
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
